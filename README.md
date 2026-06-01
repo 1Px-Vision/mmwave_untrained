@@ -87,6 +87,7 @@ Each residual block refines the complex-valued feature representation while pres
 
 ## Recommended GPU Run
 
+```
 !python mmwave_stripmap_untrained.py \
   --use-uploaded-image /content/Radar_in.jpg \
   --device cuda \
@@ -103,4 +104,21 @@ Each residual block refines the complex-valued feature representation while pres
   --sparse-weight 2e-5 \
   --lap-weight 5e-5
 
-  
+  ```
+
+### Main Outputs
+ ```
+Result_mmWaveSAR_PSF_LoS/
+├── 01_target_reflectivity.png
+├── 02_scan_trajectory.png
+├── 03_simulated_echo.png
+├── 04_psf_weighted_backprojection.png
+├── 05_los_sensitivity.png
+├── 06_center_psf.png
+├── 07_psf_los_optimized_reconstruction.png
+├── 08_complex_resnet_reconstruction.png
+├── loss_curve_psf_los.png
+├── loss_curve_complex_resnet.png
+└── simulated_mmwave_psf_los_data.npz
+ ```
+
