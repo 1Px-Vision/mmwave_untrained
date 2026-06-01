@@ -25,19 +25,18 @@ The direct, untrained reconstruction optimizes the image itself rather than trai
 
 The untrained PSF-LoS reconstruction is optimized by minimizing a radar-domain data-fidelity loss combined with image-domain regularization terms:
 
-$\mathcal{L}$ =$\mathcal{L}_{meas}$+ $\lambda_{TV}\mathcal{L}_{TV}$ +$\lambda_{sparse}\|\rho\|_1$
-+$\lambda_{lap}\mathcal{L}_{lap}$
+$\mathcal{L}$ =$\mathcal{L}_{meas}$+ $\lambda_{TV}\mathcal{L}_{TV}$ +$\lambda_{sparse}\|\rho\|_1$ +$\lambda_{lap}\mathcal{L}_{lap}$
 
 where the complex measurement loss is defined as:
 
-\mathcal{L}_{meas}= \left\|
+$\mathcal{L}_{meas}= \left\|
 \Re(H\rho)-\Re(S)
 \right\|
 +
 \left\|
 \Im(H\rho)-\Im(S)
 \right\|
-
+$
 Here, (S) is the measured or simulated complex radar echo, (\rho) is the reconstructed scene reflectivity, and (H) is the PSF-LoS forward radar operator. The measurement term enforces consistency between the predicted radar echo (H\rho) and the acquired echo (S) in both real and imaginary components.
 
 The regularization terms improve the stability and visual quality of the reconstruction:
