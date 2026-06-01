@@ -25,7 +25,7 @@ The direct, untrained reconstruction optimizes the image itself rather than trai
 
 The untrained PSF-LoS reconstruction is optimized by minimizing a radar-domain data-fidelity loss combined with image-domain regularization terms:
 
-$\mathcal{L}$ =$\mathcal{L}_{meas}$+ $\lambda_{TV}\mathcal{L}_{TV}$ +$\lambda_{sparse}\|\rho\|_1$ +$\lambda_{lap}\mathcal{L}_{lap}$
+$\mathcal{L}=\mathcal{L}_{meas}+ \lambda_{TV}\mathcal{L}_{TV} +\lambda_{sparse}\|\rho\|_1 +\lambda_{lap}\mathcal{L}_{lap}$
 
 where the complex measurement loss is defined as:
 
@@ -41,10 +41,10 @@ Here, (S) is the measured or simulated complex radar echo, (\rho) is the reconst
 
 The regularization terms improve the stability and visual quality of the reconstruction:
 
-(\mathcal{L}_{TV}): total variation regularization, used to suppress noise and reduce speckle artifacts.
-(|\rho|_1): sparsity constraint, used to encourage compact scattering responses.
-(\mathcal{L}_{lap}): Laplacian smoothness regularization, used to reduce high-frequency artifacts and PSF side-lobes.
-(\lambda_{TV}), (\lambda_{sparse}), and (\lambda_{lap}): weighting parameters that control the contribution of each regularization term.
+($\mathcal{L}_{TV}$): total variation regularization, used to suppress noise and reduce speckle artifacts.
+($|\rho|_1$): sparsity constraint, used to encourage compact scattering responses.
+($\mathcal{L}_{lap}$): Laplacian smoothness regularization, used to reduce high-frequency artifacts and PSF side-lobes.
+($\lambda_{TV}$), (\lambda_{sparse}), and (\lambda_{lap}): weighting parameters that control the contribution of each regularization term.
 
 This formulation allows the reconstruction to be optimized without requiring a pre-trained dataset. The image is recovered by directly minimizing the mismatch between the predicted and measured mmWave radar echoes while enforcing physically meaningful image priors.
 
