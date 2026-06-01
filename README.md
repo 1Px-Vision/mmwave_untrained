@@ -51,10 +51,14 @@ Here, (S) is the measured or simulated complex radar echo, (\rho) is the reconst
 
 The regularization terms improve the stability and visual quality of the reconstruction:
 
-($\mathcal{L}_{TV}$): total variation regularization, used to suppress noise and reduce speckle artifacts.
-($|\rho|_1$): sparsity constraint, used to encourage compact scattering responses.
-($\mathcal{L}_{lap}$): Laplacian smoothness regularization, used to reduce high-frequency artifacts and PSF side-lobes.
-($\lambda_{TV}$), (\lambda_{sparse}), and (\lambda_{lap}): weighting parameters that control the contribution of each regularization term.
+* $\mathcal{L}_{\mathrm{TV}}$: Total variation regularization term used to suppress noise, reduce speckle artifacts, and promote spatially smooth reflectivity regions.
+
+* $|\rho|_1$: Sparsity constraint applied to the reconstructed reflectivity map. This term encourages compact scattering responses and reduces weak background artifacts.
+
+* $\mathcal{L}_{\mathrm{lap}}$: Laplacian smoothness regularization term used to reduce high-frequency artifacts, ringing effects, and PSF side-lobes in the reconstructed radar image.
+
+* $\lambda_{\mathrm{TV}}$, $\lambda_{\mathrm{sparse}}$, and $\lambda_{\mathrm{lap}}$: Regularization weights that control the relative contribution of the total variation, sparsity, and Laplacian terms in the total loss function.
+
 
 This formulation allows the reconstruction to be optimized without requiring a pre-trained dataset. The image is recovered by directly minimizing the mismatch between the predicted and measured mmWave radar echoes while enforcing physically meaningful image priors.
 
