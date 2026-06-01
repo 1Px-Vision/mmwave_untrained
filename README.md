@@ -21,3 +21,18 @@ The direct, untrained reconstruction optimizes the image itself rather than trai
 
 ![](https://github.com/1Px-Vision/mmwave_untrained/blob/main/mmWave_System_Block_Diagram.jpg)
 
+The total loss is:
+
+\mathcal{L}=\mathcal{L}_{meas}
++\lambda_{TV}\mathcal{L}_{TV}
++\lambda_{sparse}\|\rho\|_1
++\lambda_{lap}\mathcal{L}_{lap}
+
+where:
+
+\mathcal{L}_{meas}
+=
+\|\Re(H\rho)-\Re(S)\|
++
+\|\Im(H\rho)-\Im(S)\|
+
