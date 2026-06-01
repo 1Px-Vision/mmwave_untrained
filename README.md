@@ -2,6 +2,8 @@
 
 Simulator for generating and reconstructing 77-GHz mmWave radar images from an input target image. The code simulates a 2-D stripmap/serpentine scan, generates complex radar echo data, applies Line-of-Sight (LoS) antenna-beam weighting, performs exact PSF-normalized matched-filter backprojection, and optionally improves the image using an untrained optimization method or a complex-valued ResNet prior.
 
+![](https://github.com/1Px-Vision/mmwave_untrained/blob/main/3D-LoS-Stripmap-Scan-Geometry.jpg)
+
 ## Main Features
 * 77-GHz mmWave / automotive-radar frequency band simulation.
 * 2-D serpentine stripmap scanning trajectory similar to a real scanning stage.
