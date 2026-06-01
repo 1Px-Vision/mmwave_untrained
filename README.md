@@ -122,3 +122,14 @@ Result_mmWaveSAR_PSF_LoS/
 └── simulated_mmwave_psf_los_data.npz
  ```
 
+## Qualitative mmWave Radar Imaging Results
+
+The figure shows qualitative reconstruction results obtained using the proposed mmWave stripmap SAR simulation and untrained PSF-LoS reconstruction framework. Each target object is shown together with its corresponding reconstructed radar image.
+
+The top image of each pair represents the optical reference target, while the bottom image shows the reconstructed mmWave radar reflectivity map. The color scale represents the relative scattering intensity, where blue regions correspond to weak radar returns and yellow/red regions indicate strong radar reflections.
+
+The results demonstrate that the proposed method can recover the main geometric structure of different metallic and high-reflectivity objects, including a star-shaped target, knife, pliers, cutter, hammer, scissors, metallic can, handgun-like object, fork, carabiner, star-shaped metallic sample, and wrench. Strong responses are mainly concentrated around object edges, corners, tips, and elongated metallic structures, which are typical dominant scattering regions in mmWave radar imaging.
+
+Although the reconstructed radar images are blurrier than the optical references, the principal object shapes remain distinguishable. This behavior is expected because mmWave radar imaging depends on the electromagnetic scattering response rather than visible texture. Specular reflections, limited aperture sampling, point-spread-function side-lobes, and Line-of-Sight geometry can produce artifacts, shadowed regions, and non-uniform intensity distributions.
+
+Overall, the results confirm that the PSF-LoS stripmap reconstruction and untrained optimization approach can generate interpretable radar images from different object geometries without requiring a supervised training dataset.
