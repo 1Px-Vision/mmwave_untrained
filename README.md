@@ -21,18 +21,18 @@ The direct, untrained reconstruction optimizes the image itself rather than trai
 
 ![](https://github.com/1Px-Vision/mmwave_untrained/blob/main/mmWave_System_Block_Diagram.jpg)
 
-The total loss is:
+Loss Function
 
-\mathcal{L}=\mathcal{L}_{meas}
-+\lambda_{TV}\mathcal{L}_{TV}
-+\lambda_{sparse}\|\rho\|_1
-+\lambda_{lap}\mathcal{L}_{lap}
+The untrained PSF-LoS reconstruction is optimized by minimizing a radar-domain data-fidelity loss combined with image-domain regularization terms:
 
-where:
-
-\mathcal{L}_{meas}
+\mathcal{L}
 =
-\|\Re(H\rho)-\Re(S)\|
+\mathcal{L}_{meas}
 +
-\|\Im(H\rho)-\Im(S)\|
+\lambda_{TV}\mathcal{L}_{TV}
++
+\lambda_{sparse}\|\rho\|_1
++
+\lambda_{lap}\mathcal{L}_{lap}
 
+where the complex measurement loss is defined as:
