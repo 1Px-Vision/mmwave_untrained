@@ -63,6 +63,9 @@ The regularization terms improve the stability and visual quality of the reconst
 This formulation allows the reconstruction to be optimized without requiring a pre-trained dataset. The image is recovered by directly minimizing the mismatch between the predicted and measured mmWave radar echoes while enforcing physically meaningful image priors.
 
 ## Network Structure
+The ComplexResNetPrior is used as an untrained neural prior for complex-valued radar image reconstruction. The network processes the real and imaginary components of the reflectivity map using parallel complex convolution operations.
+
+
 ComplexResNetPrior
 ├── Head
 │   └── ComplexConv2d → ComplexBatchNorm2d → ComplexReLU
@@ -78,3 +81,5 @@ ComplexResNetPrior
 │   └── ResBlock depth
 └── Tail
     └── ComplexConv2d
+
+Each residual block refines the complex-valued feature representation while preserving the input information through skip connections. The head module extracts low-level complex features, the body module performs iterative residual feature enhancement, and the tail module maps the final complex features to the reconstructed radar reflectivity image. The network is not trained using an external dataset. Instead, its weights are optimized directly for a single radar measurement by minimizing the mismatch between the predicted complex echo and the measured or simulated echo.
