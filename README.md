@@ -21,7 +21,7 @@ Simulator for generating and reconstructing 77-GHz mmWave radar images from an i
 
 The direct, untrained reconstruction optimizes the image itself rather than training on a dataset. The image is initialized from the PSF-normalized backprojection and then refined by minimizing the radar-domain measurement error.
 
-![]()
+![](https://github.com/1Px-Vision/mmwave_untrained/blob/main/mmWave_System_Block_Diagram.jpg)
 
 ### Loss Function
 
