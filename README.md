@@ -35,3 +35,23 @@ The untrained PSF-LoS reconstruction is optimized by minimizing a radar-domain d
 \lambda_{lap}\mathcal{L}_{lap}
 
 where the complex measurement loss is defined as:
+
+\mathcal{L}_{meas}= \left\|
+\Re(H\rho)-\Re(S)
+\right\|
++
+\left\|
+\Im(H\rho)-\Im(S)
+\right\|
+
+Here, (S) is the measured or simulated complex radar echo, (\rho) is the reconstructed scene reflectivity, and (H) is the PSF-LoS forward radar operator. The measurement term enforces consistency between the predicted radar echo (H\rho) and the acquired echo (S) in both real and imaginary components.
+
+The regularization terms improve the stability and visual quality of the reconstruction:
+
+(\mathcal{L}_{TV}): total variation regularization, used to suppress noise and reduce speckle artifacts.
+(|\rho|_1): sparsity constraint, used to encourage compact scattering responses.
+(\mathcal{L}_{lap}): Laplacian smoothness regularization, used to reduce high-frequency artifacts and PSF side-lobes.
+(\lambda_{TV}), (\lambda_{sparse}), and (\lambda_{lap}): weighting parameters that control the contribution of each regularization term.
+
+This formulation allows the reconstruction to be optimized without requiring a pre-trained dataset. The image is recovered by directly minimizing the mismatch between the predicted and measured mmWave radar echoes while enforcing physically meaningful image priors.
+
