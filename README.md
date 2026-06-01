@@ -84,3 +84,23 @@ ComplexResNetPrior
 ```
 
 Each residual block refines the complex-valued feature representation while preserving the input information through skip connections. The head module extracts low-level, complex features; the body module performs iterative residual feature enhancement; and the tail module maps the final complex features to the reconstructed radar reflectivity image. The network is not trained using an external dataset. Instead, its weights are optimized directly for a single radar measurement by minimizing the mismatch between the predicted complex echo and the measured or simulated echo.
+
+## Recommended GPU Run
+
+!python mmwave_stripmap_untrained.py \
+  --use-uploaded-image /content/Radar_in.jpg \
+  --device cuda \
+  --nx 64 --nz 64 \
+  --na 128 --nf 128 \
+  --n-iter 800 \
+  --recon-mode psf-los \
+  --target-preprocess heatmap \
+  --beam-fwhm-deg 42 \
+  --ap-window hann \
+  --freq-window hann \
+  --tv-type 3 \
+  --tv-weight 2e-4 \
+  --sparse-weight 2e-5 \
+  --lap-weight 5e-5
+
+  
