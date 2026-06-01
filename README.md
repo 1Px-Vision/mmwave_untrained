@@ -62,3 +62,19 @@ The regularization terms improve the stability and visual quality of the reconst
 
 This formulation allows the reconstruction to be optimized without requiring a pre-trained dataset. The image is recovered by directly minimizing the mismatch between the predicted and measured mmWave radar echoes while enforcing physically meaningful image priors.
 
+## Network Structure
+ComplexResNetPrior
+├── Head
+│   └── ComplexConv2d → ComplexBatchNorm2d → ComplexReLU
+├── Body
+│   ├── ResBlock 1
+│   │   ├── ComplexConv2d
+│   │   ├── ComplexBatchNorm2d
+│   │   ├── ComplexReLU
+│   │   ├── ComplexConv2d
+│   │   └── ComplexBatchNorm2d
+│   ├── ResBlock 2
+│   ├── ...
+│   └── ResBlock depth
+└── Tail
+    └── ComplexConv2d
