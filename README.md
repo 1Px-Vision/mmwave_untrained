@@ -25,8 +25,7 @@ Loss Function
 
 The untrained PSF-LoS reconstruction is optimized by minimizing a radar-domain data-fidelity loss combined with image-domain regularization terms:
 
-\mathcal{L}
-=
+\mathcal{L} =
 \mathcal{L}_{meas}
 +
 \lambda_{TV}\mathcal{L}_{TV}
